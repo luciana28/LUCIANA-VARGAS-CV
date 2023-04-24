@@ -1,0 +1,533 @@
+
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
+
+/*CSS Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Variables Globales*/
+:root{
+    --sideBGColor: #301551;
+    --themeColor: #6807F9;
+    --iconBGColor: #2C2F3F;
+    --textColor: #353535;
+    --bgColor:#F7F7F7 ;
+    --blanco: #ffffff;
+    --grisSombra:#d3d3d3;
+    /*--rojo: #FF5733;*/
+    --secundario: #9852F9;
+    --negro: #000000;
+
+}
+/*=====Header=====*/
+header{
+     height: 100vh;
+     width: 300px;
+     padding: 15px 30px;
+     background-color: var(--sideBGColor);
+     overflow: auto;
+     position: fixed;
+     left: 0;
+     top:0;
+     bottom: 0;
+     transition: 0.4s;
+    z-index: 99;
+}
+
+header .profile{
+    text-align: center;
+    margin: 10px 0;
+}
+header .profile img{
+    width: 150px;
+    border-radius: 50%;
+   border: 10px solid var(--iconBGColor);
+}
+header .profile h1{
+    color: var(--blanco);
+    font-weight: 600;
+}
+header .profile .social-icons a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius:  50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: var(--iconBGColor);
+    color: var(--blanco);
+    font-size: 18px;
+    margin: 1.5px;
+    transition: 0.4s;
+  
+}
+header .profile .social-icons a:hover{
+    background-color: var(--themeColor);
+}
+
+/*====NavBar======*/
+header nav{
+    margin-top: 30px;
+
+}
+header nav ul li{
+    list-style: none;
+
+}
+header nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 7px 0;
+    color:var(--grisSombra);
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    
+}
+header nav ul li a i{
+    margin-right: 10px;
+    font-size: 20px;
+    transition: 0.4s;
+
+}
+header nav ul li a:hover i{
+    color: var(--themeColor);
+
+}
+header nav ul li .active i{
+    color: var(--themeColor);
+
+}
+/*=====Footer=====*/
+header .footer{
+    text-align: center;
+    background-color: var(--sideBGColor);
+    width: 300px;
+    color:var(--grisSombra);
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+  
+}
+header .footer p a{
+    color: var(--themeColor);
+
+}
+
+/*======Movile NAv Toggle=====*/
+#MenuBtn{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    color: var(--blanco);
+    background-color: var(--themeColor);
+    text-align: center;
+    line-height: 42px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+    display: none; /*desaparece el icono de hambuerguesa*/
+    z-index: 999;
+}
+/*activamos los media*/
+@media only screen and (max-width:1050px){
+    header{
+        left:-300px;
+    }
+    header .footer{
+        left:-300px;
+    }
+    #MenuBtn{
+        display: block;
+    }
+}
+/*Header toggle*/
+.mobile-nav-active header{
+    left: 0;
+
+}
+.mobile-nav-active header .footer{
+    left: 0;
+
+}
+/*Header End*/
+/*----------------------------------------------------------------*/
+/*===============MAIN SECTION===========*/
+main{
+    margin-left: 300px;
+    background-color: var(--bgColor);
+    transition: 0.3s;
+}
+@media only screen and (max-width:1050px){
+    main{
+        margin-left: 0;
+    }
+
+}
+
+/*==========Home Section=========*/
+#home{
+    height: 100vh;
+    width:100%;
+    background-image: url(../img/hero-bg.jpg);
+    background-size: cover;
+    background-attachment:fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    position: relative;
+}
+
+/*overlay*/
+#home::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 25%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#home .home-row{
+    z-index: 1;
+}
+#home .home-row h1{
+    font-size: 60px;
+    color: var(--blanco);
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    line-height: 70px;
+}
+#home .home-row h1 span{
+    color: var(--secundario);
+}
+#home .home-row p{
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: 500;
+}
+#home .home-row p span{
+    border-bottom:  4px solid var(--secundario);
+
+}
+/*MObile View*/
+@media only screen and (max-width: 670px){
+    #home{
+        padding: 30px;
+    }
+    #home .home-row h1{
+        font-size: 35px;
+        letter-spacing: 0;
+        line-height: 50px;
+    } 
+    #home .home-row h1 br{
+        display: none;    
+    }
+    #home .home-row p{
+        font-size: 20px;
+        font-weight: 400;
+        
+
+    }
+}
+/*=====About Section STAR======*/
+#about{
+    padding:  70px 30px;
+    background-color: var(--blanco);
+
+}
+/*Global Heading*/
+.sub-heading{
+    color: var(--negro);
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#about p{
+    text-align: center;
+    font-style: static;
+}
+
+/*WE will use same divider in all section-
+Usaremos el mismo divisor en todas las secciones.*/
+.divider{
+    width: 80px;
+    height: 4px;
+    background-color: var(--secundario);
+    border-radius: 3px;
+
+    
+}
+
+/*Mobile View*/
+@media only screen and (max-width: 850px){
+    #about{
+        padding:50px 30px;
+    }
+    #about .divider ~p{
+        font-size: 14px;
+        letter-spacing: 0px;
+        text-align: justify;
+    }
+    #about .about-col{
+        flex-direction: column;
+    }
+    #about .about-col .img-col img{ 
+        width: 50%;
+    }
+    #about .about-col .info-col h2{
+        font-weight: 600;
+        font-size: 25px;
+        letter-spacing: 0px;
+    }
+    #about .about-col .info-col p{
+        font-size: 14px;
+        letter-spacing: 0px;
+       
+    }
+}
+
+@media only screen and (max-width: 400px){
+    #about .about-col .img-col img{ 
+        width: 90%;
+    }
+
+}
+/*=====About Section END======*/
+/*------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------------*/
+/*--===============Skills Section START===============-*/
+#skill{
+    padding: 70px 30px;
+    
+}
+
+#skill .skill-row .skill-tec{
+    margin-top:35px;   
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+#skill .skill-row .skill-tec img{
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+      
+    
+} 
+
+#skill .skill-tec .img-tec{
+    display: grid;
+    grid-gap: 10px;
+    
+}
+#skill p{
+    text-align: center;
+    font-style: static;
+}
+
+
+/*MOvile View*/
+@media only screen and (max-width: 450px)  {
+    #skill{
+        padding: 50px 15px;
+    }
+    #skill .skill-row .skill-tec{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+
+}
+/*-----------------------------------------------------------------------------*/
+
+/*<-------------------------------------------------------------------------------------->*/
+/*--===============Portfolio  Section Start===============--*/
+#portfolio{
+    padding: 70px 30px;
+    background-color: var(--blanco);
+}
+#portfolio .port-row{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 35px;/*separacion entre ellos*/
+}
+#portfolio .port-row .port-item{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);   
+}
+
+#portfolio .port-row .port-item .port-img img{
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+  
+}
+#portfolio .port-row .port-item .port-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secundario);
+    padding: 0 15px;
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: scale(0);
+    transition: 0.4s;
+    border-radius: 10px;
+    visibility: hidden;
+ 
+}
+#portfolio .port-row .port-item:hover .port-info{
+    transform: scale(1);
+    visibility: visible;
+    
+}
+#portfolio .port-row .port-item .port-info h4{
+    color: var(--bgColor);
+    font-size: 25px;
+    font-weight: 600;
+
+}
+#portfolio .port-row .port-item .port-info h4 + p{
+    color: var(--bgColor);
+    font-size: 14px;
+}
+#portfolio .port-row .port-item .port-info a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bgColor);
+    border-radius: 50%;
+    color: var(--secundario);
+    line-height: 46px;
+    transition: 0.4s;
+}
+#portfolio .port-row .port-item .port-info a:hover{
+    background-color: var(--grisSombra);
+    color: var(--bgColor);
+}
+#portfolio p{
+    text-align: center;
+    font-style: static;
+}
+
+/*Mobile View*/
+@media only screen and (max-width: 650px){
+ #portfolio{
+        padding: 50px 10px;
+    }
+    #portfolio .port-row{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px
+    }
+
+}
+
+
+@media only screen and (max-width: 350px){
+    #portfolio .port-row{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px
+    }
+}
+    
+
+
+/*--================Portfolio Section END===============--*/
+/*<----------------------------------------------------------------------------------->*/
+
+
+
+/*<------------------------------------------------------------------------------------->*/
+
+
+/*--================Contact Section START===============--*/
+#contact{
+    padding: 70px 30px;
+    background-color: var(--textColor);
+  
+}
+
+
+#contact  .social-icons-contact ul li  {
+    display:inline-flex;
+    width: 36px;
+    height: 36px;
+    border-radius:  50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: var(--iconBGColor);
+    color: var(--blanco);    
+    font-size: 18px;
+    margin: 45px;
+    transition: 0.4s;
+    justify-content: center;
+    
+   
+}
+.social-icons-contact{
+   margin-left: 300px;
+   
+
+
+   
+}
+.social-icons-contact ul li  {
+    
+    color: var(--bgColor);
+}
+.social-icons-contact ul li  a {
+    color: var(--bgColor);
+    text-decoration: none;
+
+}
+#contact h1{
+    color:var(--grisSombra)
+}
+
+
+/*Mobile View*/
+@media only screen and (max-width: 800px){
+    #contact{
+        padding: 50px;
+    }
+    #contact .social-icons-contact{
+        
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+
+/*--================Contact Section END===============--*/
+
+
+
